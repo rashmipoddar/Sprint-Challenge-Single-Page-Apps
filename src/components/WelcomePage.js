@@ -14,6 +14,9 @@ export default function WelcomePage() {
         <Link to='/characters'>
           <button>View Characters</button>
         </Link>
+        <Link to='/locations'>
+          <button>View Locations</button>
+        </Link>
       </header>
     </section>
   );

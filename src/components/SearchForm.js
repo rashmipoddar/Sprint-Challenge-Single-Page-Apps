@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
 
-const subHeader = styled.h2`
+const SubHeader = styled.h2`
   font-size: 2rem;
 `;
 
@@ -35,7 +35,7 @@ export default function SearchForm(props) {
       />
     <ul>
       {/* {console.log('the search result is ', searchResults)} */}
-      <subHeader>Search Result</subHeader>
+      <SubHeader>Search Result</SubHeader>
       {searchResults.map(item => {
         return (
           <div key={item}>
