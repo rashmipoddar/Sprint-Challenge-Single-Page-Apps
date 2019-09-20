@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: Client side routing means there is no request to a server whenever a user does something in the page. Client side rendering is very popular these days because of the speed in which data is rendered to a client on request. In client side rendering the initial load time is higher but after that the load times are lower because everything is loaded and kept ready for a client request.
 
 ## Project Set Up
 
