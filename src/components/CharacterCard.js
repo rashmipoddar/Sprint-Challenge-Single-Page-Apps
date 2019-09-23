@@ -16,6 +16,8 @@ export default function CharacterCard(props) {
       {/* {console.log(props.character)} */}
       <Header>{props.character.name}</Header>
       <img src={props.character.image} alt='Character Image' />
+      <h2>{props.character.species}</h2>
+      <h2>{props.character.status}</h2>
     </Div>  
   );
 }

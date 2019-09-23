@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from 'styled-components';
+import CharacterCard from "./CharacterCard";
 
 const SubHeader = styled.h2`
   font-size: 2rem;
@@ -7,21 +8,14 @@ const SubHeader = styled.h2`
 
 export default function SearchForm(props) {
   // console.log(props.characters);
-  const characterNames = props.characters.map(character => character.name);
-  // console.log(characterNames);
-  const [ searchTerm, setSearchTerm ] = useState("");
-  const [ searchResults, setSearchResults ] = useState([]);
-
+  // const [ searchResults, setSearchResults ] = useState([]);
+  
+  
+  
   const handleChange = (event) => {
-    setSearchTerm(event.target.value);
+    props.getSearchTerm(event.target.value);
+    
   }
-
-  useEffect(() => {
-      const results = characterNames.filter(name => {
-        return name.toLowerCase().includes(searchTerm);
-      })
-      setSearchResults(results);
-  }, [searchTerm])
 
   return (
     
@@ -30,20 +24,18 @@ export default function SearchForm(props) {
       <input
         type="text"
         placeholder="Search"
-        value={searchTerm}
         onChange={handleChange}
       />
-    <ul>
-      {/* {console.log('the search result is ', searchResults)} */}
-      <SubHeader>Search Result</SubHeader>
-      {searchResults.map(item => {
-        return (
-          <div key={item}>
-            <li>{item}</li>
-          </div>
-        )
-      })}
-    </ul>  
+    {/* {console.log('the search result is ', searchResults)} */}
+    {/* <SubHeader>Search Result</SubHeader> */}
+    {/* {searchResults.map(result => {
+      return (
+        <div key={result.id}>
+          <CharacterCard character={result}/>
+        </div>
+      )
+    })} */}
+    
     </section>
   );
 }
