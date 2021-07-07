@@ -1,11 +1,25 @@
 import React from "react";
-import Header from "./components/Header.js";
+import { Route } from 'react-router-dom';
+import styled from 'styled-components';
 
+import Header from "./components/Header.js";
+import WelcomePage from "./components/WelcomePage.js";
+import CharacterList from "./components/CharacterList.js";
+import SearchForm from "./components/SearchForm.js";
+import LocationsList from "./components/LocationsList";
+
+const Div = styled.div`
+  background: #cceffa;
+`;
 
 export default function App() {
   return (
-    <main>
+    <Div>
       <Header />
-    </main>
+      <Route exact path='/' component={WelcomePage} />
+      {/* <Route exact path='/characters' component={SearchForm} /> */}
+      <Route exact path='/characters' component={CharacterList} />
+      <Route exact path='/locations' component={LocationsList} />
+    </Div>
   );
 }
